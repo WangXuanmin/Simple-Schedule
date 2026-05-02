@@ -36,3 +36,19 @@ npm.cmd start
 ```
 
 也可以直接打开 `src/index.html` 查看静态预览。
+
+## 桌面图标和开机自启动
+
+项目内提供隐藏控制台的启动脚本：
+
+```text
+scripts/start-schedule-widget.vbs
+```
+
+桌面快捷方式和开机自启动快捷方式会指向这个脚本。双击桌面图标即可启动；开机登录 Windows 后，启动文件夹中的快捷方式会自动运行该脚本。
+
+重新创建快捷方式：
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File scripts/create-windows-shortcuts.ps1
+```

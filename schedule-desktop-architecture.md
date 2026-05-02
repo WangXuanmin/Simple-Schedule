@@ -279,6 +279,35 @@ window:close
 window:toggle-always-on-top
 ```
 
+## 10.1 Windows 启动入口
+
+当前初版不打包为安装程序，而是提供轻量启动入口：
+
+```text
+scripts/start-schedule-widget.vbs
+```
+
+该脚本职责：
+
+- 将当前工作目录切换到项目根目录。
+- 执行 `npm.cmd start` 启动 Electron 应用。
+- 使用隐藏窗口方式运行，避免显示命令行窗口。
+
+桌面快捷方式和开机自启动快捷方式均指向该脚本。
+
+快捷方式创建脚本：
+
+```text
+scripts/create-windows-shortcuts.ps1
+```
+
+开机自启动实现方式：
+
+- 在 Windows Startup 文件夹中创建 `.lnk` 快捷方式。
+- 快捷方式目标为 `wscript.exe`。
+- 参数为 `scripts/start-schedule-widget.vbs` 的绝对路径。
+- 该方式不需要修改注册表，便于用户手动删除或禁用。
+
 ## 11. 后续可迁移架构
 
 如果后续加入编辑任务、提醒、开机自启、搜索、导出或多端同步，建议迁移为：
@@ -316,6 +345,7 @@ src/shared/services/dateFormatter.ts
 
 - Deadline 标红规则从“具体 deadline 时间早于当前时刻”调整为“deadline 日期是今天或今天之前”。
 - 已完成任务 5 天自动清理的触发时机明确为应用初始化和列表刷新；当前初版不使用后台定时器。
+- 增加隐藏控制台启动脚本，并通过桌面/Startup 快捷方式支持直接启动和开机自启动。
 - 主标题文案改为“天枢的事业”。
 - HTML 页面标题同步改为“天枢的事业”。
 - 底部提示文案改为箭头形式：`↑ Completed` / `↓ Todo`。
