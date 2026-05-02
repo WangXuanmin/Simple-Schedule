@@ -2,6 +2,10 @@
 
 一个简洁的 Windows 桌面日程小组件初版，界面标题为“天枢的事业”。
 
+![image-20260502171250000](C:\Users\Dubhe\Documents\New project\demo1)
+
+![image-20260502171207059](C:\Users\Dubhe\Documents\New project\demo2)
+
 ## 功能
 
 - 待办任务包含任务名称和 deadline。
