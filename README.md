@@ -1,10 +1,29 @@
 # Desktop Schedule Widget
 
-一个简洁的 Windows 桌面日程小组件初版，界面标题为“天枢的事业”。
+一个简洁的 Windows 桌面日程小组件，界面标题为“天枢的事业”。
 
-![image-20260502171250000](C:\Users\Dubhe\Documents\New project\demo1.png)
+![待办界面](./demo1.png)
 
-![image-20260502171207059](C:\Users\Dubhe\Documents\New project\demo2.png)
+![完成清单界面](./demo2.png)
+
+## 为什么 GitHub 上图片不显示
+
+README 之前使用的是 Windows 本地绝对路径：
+
+```md
+![image](C:\Users\Dubhe\Documents\New project\demo1.png)
+```
+
+这类路径只在你的电脑上存在，GitHub 服务器和其他访问者都无法读取，所以 GitHub 不会渲染图片。
+
+正确写法是使用仓库内的相对路径：
+
+```md
+![待办界面](./demo1.png)
+![完成清单界面](./demo2.png)
+```
+
+只要 `demo1.png` 和 `demo2.png` 已经提交并推送到仓库根目录，GitHub 就能正常显示。
 
 ## 功能
 
@@ -14,16 +33,12 @@
 - 点击圆圈后任务进入完成清单，圆圈容器保留并显示对勾。
 - 默认只显示右上角圆角矩形加号按钮，点击后展开任务名称和 deadline 输入。
 - 任务之间使用细横线分割。
-- Schedule 主界面铺满窗口，缩放时不显示额外外层背景。
+- 主界面铺满窗口，缩放时不显示额外外层背景。
 - 向上滚轮切换到完成清单，向下滚轮返回待办列表。
 - 底部使用 `↑ Completed` / `↓ Todo` 提示切换方向。
 - 切换待办/完成清单时使用窗口内部上下滑动动画。
 - 已完成任务超过 5 天自动清理。
 - 数据保存在本地浏览器/Electron 存储中。
-
-## 文档维护
-
-后续每次修改需求或实现，需要同步更新功能文档和程序架构文档。
 
 ## 运行
 
@@ -39,7 +54,17 @@ npm.cmd install
 npm.cmd start
 ```
 
-也可以直接打开 `src/index.html` 查看静态预览。
+浏览器预览：
+
+```bash
+npm.cmd run preview
+```
+
+然后打开：
+
+```text
+http://127.0.0.1:4173
+```
 
 ## 桌面图标和开机自启动
 
@@ -60,5 +85,9 @@ node_modules/electron/dist/electron.exe
 重新创建快捷方式：
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File scripts/create-windows-shortcuts.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Dubhe\Documents\New project\scripts\create-windows-shortcuts.ps1"
 ```
+
+## 文档维护
+
+后续每次修改需求或实现，需要同步更新功能文档和程序架构文档。
