@@ -1,4 +1,0 @@
-interface:
-  display_name: "Publish Git Project to GitHub"
-  short_description: "Prepare and publish a local Git project to GitHub."
-  default_prompt: "Publish this local project to GitHub using GitHub Desktop or Git CLI."
