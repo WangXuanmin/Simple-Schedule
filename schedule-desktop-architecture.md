@@ -306,6 +306,7 @@ scripts/create-windows-shortcuts.ps1
 - 在 Windows Startup 文件夹中创建 `.lnk` 快捷方式。
 - 快捷方式目标为 `wscript.exe`。
 - 参数为 `scripts/start-schedule-widget.vbs` 的绝对路径。
+- 图标来源为 `node_modules/electron/dist/electron.exe`。
 - 该方式不需要修改注册表，便于用户手动删除或禁用。
 
 ## 11. 后续可迁移架构

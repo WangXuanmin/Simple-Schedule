@@ -3,7 +3,7 @@ $launcher = Join-Path $project "scripts\start-schedule-widget.vbs"
 $wscript = Join-Path $env:WINDIR "System32\wscript.exe"
 $desktop = [Environment]::GetFolderPath("DesktopDirectory")
 $startup = [Environment]::GetFolderPath("Startup")
-$icon = (Join-Path $env:WINDIR "System32\shell32.dll") + ",44"
+$icon = (Join-Path $project "node_modules\electron\dist\electron.exe") + ",0"
 $shortcutName = ([char]0x5929).ToString() + ([char]0x67a2).ToString() + ([char]0x7684).ToString() + ([char]0x4e8b).ToString() + ([char]0x4e1a).ToString() + ".lnk"
 
 $shell = New-Object -ComObject WScript.Shell

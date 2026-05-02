@@ -47,6 +47,12 @@ scripts/start-schedule-widget.vbs
 
 桌面快捷方式和开机自启动快捷方式会指向这个脚本。双击桌面图标即可启动；开机登录 Windows 后，启动文件夹中的快捷方式会自动运行该脚本。
 
+快捷方式图标使用 Electron 应用窗口图标，来源为：
+
+```text
+node_modules/electron/dist/electron.exe
+```
+
 重新创建快捷方式：
 
 ```powershell
