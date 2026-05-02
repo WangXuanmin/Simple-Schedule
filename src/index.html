@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天枢的事业</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="widget" id="widget">
+      <header class="titlebar">
+        <div class="drag-region">
+          <h1>天枢的事业</h1>
+          <p id="todayLabel"></p>
+        </div>
+        <div class="window-actions">
+          <button class="icon-button" id="pinButton" type="button" title="Pin window">
+            <span aria-hidden="true">^</span>
+          </button>
+          <button class="icon-button" id="minimizeButton" type="button" title="Minimize">
+            <span aria-hidden="true">-</span>
+          </button>
+          <button class="icon-button" id="closeButton" type="button" title="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="content-window" id="contentWindow">
+        <div class="view-stack" id="viewStack">
+          <section class="view-panel" aria-label="Todo tasks">
+            <div class="view-heading">
+              <h2>Todo</h2>
+              <p>Sorted by deadline</p>
+            </div>
+            <div class="list-shell">
+              <ul class="task-list" id="todoList"></ul>
+            </div>
+          </section>
+
+          <section class="view-panel" aria-label="Completed tasks">
+            <div class="view-heading">
+              <h2>Completed</h2>
+              <p>Auto clears after 5 days</p>
+            </div>
+            <div class="list-shell">
+              <ul class="task-list" id="completedList"></ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="quick-add" id="quickAdd">
+        <button class="quick-add-button" id="openAddButton" type="button" title="Add task">+</button>
+        <form class="add-panel" id="addPanel" aria-hidden="true">
+          <input id="taskNameInput" type="text" maxlength="80" placeholder="Task name" />
+          <input id="deadlineInput" type="datetime-local" />
+          <button class="submit-button" id="addTaskButton" type="submit" title="Create task">+</button>
+          <button class="cancel-button" id="cancelAddButton" type="button" title="Cancel">&times;</button>
+        </form>
+      </section>
+
+      <footer class="switch-hint" id="switchHint">↑ Completed</footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
